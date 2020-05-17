@@ -76,5 +76,15 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
+  // Make the Tetromino move down every seoncd (1000 milliseconds)
+  timerId = setInterval(moveDown, 1000)
+
+  // Move down function
+  function moveDown() {
+    undraw()
+    currentPosition += width
+    draw()
+  }
+
 
 })
