@@ -52,6 +52,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const theTetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
 
-  
+  let currentPosition = 4
+  let currentRotation = 0
+
+  // Randomly select a Tetromino and its first rotation
+  // Random will randomly select a number (index) from the array
+  // Floor will round down to the nearest integer so you actually 
+  // have an index number.
+  let random = Math.floor(Math.random()*theTetrominoes.length)
+  let current = theTetrominoes[random][currentRotation]
+
+  // Draw the Tetromino
+  function draw() {
+    current.forEach(index => {
+      squares[currentPosition + index].classList.add('tetromino')
+    })
+  }
+
+  // Undraw the Tetromino
+  function undraw() {
+    current.forEach(index => {
+      squares[currentPosition + index].classList.remove('tetromino')
+    })
+  }
+
 
 })
